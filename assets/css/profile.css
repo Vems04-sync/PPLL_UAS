@@ -1,0 +1,43 @@
+/* Pastikan wrapper memanjang penuh */
+#wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Pastikan page-content-wrapper memanjang penuh setelah sidebar */
+#page-content-wrapper {
+    width: 100% !important;
+    flex: 1 !important;
+    max-width: 100% !important;
+}
+
+/* Pastikan main tidak ada padding */
+#page-content-wrapper main {
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* Atur lebar container profile-page-wrapper */
+.profile-page-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* Pastikan footer juga memiliki padding yang sama */
+#page-content-wrapper .footer {
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#page-content-wrapper .footer .container-fluid {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    margin: 0 !important;
+}
+

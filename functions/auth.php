@@ -9,7 +9,15 @@ require_once $base_path . '/config/database.php'; // load PDO
 function checkLogin()
 {
     if (!isset($_SESSION['user_id'])) {
-        header("Location: ../process/auth_login.php");
+        // Deteksi path relatif berdasarkan lokasi file yang memanggil
+        $current_path = $_SERVER['PHP_SELF'];
+        $base_dir = dirname($current_path);
+        
+        if (strpos($current_path, '/process/') !== false || $base_dir === '/process') {
+            header("Location: auth_login.php");
+        } else {
+            header("Location: process/auth_login.php");
+        }
         exit;
     }
 }
@@ -35,6 +43,12 @@ function login($phone_number, $password)
 function logout()
 {
     session_destroy();
-    header("Location: ../process/auth_login.php");
+    // Redirect ke halaman login
+    $current_path = $_SERVER['PHP_SELF'];
+    if (strpos($current_path, '/process/') !== false) {
+        header("Location: auth_login.php");
+    } else {
+        header("Location: process/auth_login.php");
+    }
     exit;
 }
