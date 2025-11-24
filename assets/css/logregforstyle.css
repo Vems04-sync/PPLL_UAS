@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa; /* Background halaman */
+}
+
+/* Card Container */
+.auth-card {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  padding: 2.5rem;
+}
+
+/* Logo MT */
+.logo-mt {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    #667eea 0%,
+    #764ba2 100%
+  ); /* Gradient Ungu/Biru */
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  margin: 0 auto 1.5rem auto;
+}
+
+/* Input Fields (Mirip Gambar) */
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6c757d;
+  margin-bottom: 0.4rem;
+}
+
+.input-group-custom {
+  background-color: #f3f4f6; /* Warna abu-abu input */
+  border-radius: 10px;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.input-group-custom:focus-within {
+  background-color: #fff;
+  border-color: #764ba2; /* Warna border saat diklik */
+  box-shadow: 0 0 0 4px rgba(118, 75, 162, 0.1);
+}
+
+.input-group-custom .input-group-text {
+  background: transparent;
+  border: none;
+  color: #a0aec0;
+}
+
+.input-group-custom .form-control {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Tombol */
+.btn-dark-custom {
+  background-color: #0f172a; /* Hitam kebiruan */
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 500;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.btn-dark-custom:hover {
+  background-color: #1e293b;
+}
+
+.link-primary {
+  text-decoration: none;
+  color: #4f46e5;
+}
+
+.link-primary:hover {
+  text-decoration: underline;
+}
