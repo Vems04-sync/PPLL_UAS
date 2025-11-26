@@ -14,6 +14,16 @@ function checkLogin()
     }
 }
 
+// Fungsi Cek Sudah Login (Dipakai di Login & Register)
+// Tujuannya: Mencegah orang yang SUDAH login masuk ke halaman daftar lagi
+function checkAlreadyLogin()
+{
+    if (isset($_SESSION['user_id'])) {
+        header("Location: ../dashboard.php");
+        exit;
+    }
+}
+
 // contoh fungsi login
 function login($phone_number, $password)
 {

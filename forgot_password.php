@@ -20,10 +20,6 @@ checkAlreadyLogin(); // Redirect ke dashboard jika sudah login
         <div class="row justify-content-center">
             <div class="col-md-5 col-lg-4">
 
-                <div class="mb-4 text-start">
-                    <span class="text-muted small">lupa password</span>
-                </div>
-
                 <div class="text-center mb-4">
                     <div class="logo-mt mb-3">MT</div>
                     <h2 class="fw-bold mb-2">Forgot Password?</h2>
