@@ -78,7 +78,7 @@ if (!function_exists('getInitials')) {
                     <i class="bi bi-person me-2"></i> Profile
                 </a>
 
-                <a href="logout.php" class="sidebar-link text-danger" onclick="return confirm('Yakin ingin keluar?');">
+                <a href="process/auth_login.php?action=logout" class="sidebar-link text-danger" onclick="return confirm('Yakin ingin keluar?');">
                     <i class="bi bi-box-arrow-right me-2 text-danger"></i> Logout
                 </a>
 

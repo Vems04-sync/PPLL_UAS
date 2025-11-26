@@ -9,7 +9,7 @@ require_once $base_path . '/config/database.php'; // load PDO
 function checkLogin()
 {
     if (!isset($_SESSION['user_id'])) {
-        header("Location: ../process/auth_login.php");
+        header("Location: ../login.php");
         exit;
     }
 }

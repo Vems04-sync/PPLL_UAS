@@ -352,40 +352,56 @@ if ($user_id > 0 && isset($pdo)) {
 }
 </style>
 
-<div class="app-container">
-    <div class="header-row">
-        <div class="header-left">
-            <h2>Dashboard</h2>
-            <p>Manage your tasks and track progress</p>
-        </div>
+<div class="app-container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addTaskModal">+ New Task</button>
+            <h3 class="fw-bold mb-1">Dashboard</h3>
+            <div class="text-muted">Manage your tasks and track progress</div>
         </div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+            + New Task
+        </button>
     </div>
 
-    <!-- Statistik Task -->
-    <div class="cards-wrap">
-        <div class="stat-card">
-            <div class="stat-icon icon-blue">📋</div>
-            <div class="stat-content">
-                <div class="label">Total Tasks</div>
-                <div class="value" id="totalTasks"><?= $totalTasks ?></div>
+    <!-- Statistik -->
+    <div class="row g-3 mb-4">
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body d-flex align-items-center">
+                    <div class="me-3 fs-3">📋</div>
+                    <div>
+                        <div class="text-muted">Total Tasks</div>
+                        <div class="fs-4 fw-bold" id="totalTasks"><?= $totalTasks ?></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="stat-card">
-            <div class="stat-icon icon-amber">⏳</div>
-            <div class="stat-content">
-                <div class="label">Pending</div>
-                <div class="value" id="pendingTasks"><?= $pendingTasks ?></div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body d-flex align-items-center">
+                    <div class="me-3 fs-3">⏳</div>
+                    <div>
+                        <div class="text-muted">Pending</div>
+                        <div class="fs-4 fw-bold" id="pendingTasks"><?= $pendingTasks ?></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="stat-card">
-            <div class="stat-icon icon-green">✅</div>
-            <div class="stat-content">
-                <div class="label">Completed</div>
-                <div class="value" id="completedTasks"><?= $completedTasks ?></div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body d-flex align-items-center">
+                    <div class="me-3 fs-3">✅</div>
+                    <div>
+                        <div class="text-muted">Completed</div>
+                        <div class="fs-4 fw-bold" id="completedTasks"><?= $completedTasks ?></div>
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 
     <!-- Search / Filter -->
@@ -538,19 +554,25 @@ if ($user_id > 0 && isset($pdo)) {
 
 
     <!-- Table Tasks -->
-    <div class="table-wrap">
-        <div class="table-card">
-            <table class="table">
-                <thead>
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-white">
+            <h5 class="m-0 fw-bold">Your Tasks</h5>
+        </div>
+
+        <div class="card-body p-0">
+
+            <table class="table table-hover mb-0">
+                <thead class="table-light">
                     <tr>
-                        <th class="checkbox-td">Done</th>
+                        <th style="width:70px;">Done</th>
                         <th>Task</th>
-                        <th style="width:120px;">Priority</th>
-                        <th style="width:140px;">Category</th>
-                        <th style="width:120px;">Deadline</th>
-                        <th style="width:120px;">Actions</th>
+                        <th style="width:130px;">Priority</th>
+                        <th style="width:150px;">Category</th>
+                        <th style="width:130px;">Deadline</th>
+                        <th style="width:110px;">Actions</th>
                     </tr>
                 </thead>
+
                 <tbody id="tasksTbody">
                     <?php if (!empty($tasks)): ?>
                     <?php foreach($tasks as $t):
@@ -607,9 +629,8 @@ if ($user_id > 0 && isset($pdo)) {
                     <?php else: ?>
                     <tr>
                         <td colspan="6">
-                            <div class="empty-state">
-                                <h4>No tasks yet</h4>
-                                <div>Add your first task using the <strong>New Task</strong> button.</div>
+                            <div class="p-4 text-center text-muted" id="tableEmptyState">
+                                No tasks yet — click “New Task” to add one.
                             </div>
                         </td>
                     </tr>
