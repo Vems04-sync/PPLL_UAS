@@ -9,7 +9,16 @@ require_once $base_path . '/config/database.php'; // load PDO
 function checkLogin()
 {
     if (!isset($_SESSION['user_id'])) {
-        header("Location: ../login.php");
+        // Deteksi path berdasarkan lokasi file yang memanggil
+        $current_path = $_SERVER['PHP_SELF'];
+        
+        if (strpos($current_path, '/process/') !== false) {
+            // Jika dipanggil dari folder process
+            header("Location: ../login.php");
+        } else {
+            // Jika dipanggil dari root directory
+            header("Location: login.php");
+        }
         exit;
     }
 }
@@ -19,7 +28,16 @@ function checkLogin()
 function checkAlreadyLogin()
 {
     if (isset($_SESSION['user_id'])) {
-        header("Location: ../dashboard.php");
+        // Deteksi path berdasarkan lokasi file yang memanggil
+        $current_path = $_SERVER['PHP_SELF'];
+        
+        if (strpos($current_path, '/process/') !== false) {
+            // Jika dipanggil dari folder process
+            header("Location: ../dashboard.php");
+        } else {
+            // Jika dipanggil dari root directory
+            header("Location: dashboard.php");
+        }
         exit;
     }
 }

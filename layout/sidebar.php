@@ -63,7 +63,7 @@ if (!function_exists('getInitials')) {
         <nav class="sidebar-nav">
             <div class="sidebar-links">
 
-                <a href="index.php"
+                <a href="dashboard.php"
                     class="sidebar-link <?= basename($_SERVER['SCRIPT_NAME']) == 'index.php' || basename($_SERVER['SCRIPT_NAME']) == 'dashboard.php' ? 'active-sidebar-link' : '' ?>">
                     <i class="bi bi-grid me-2"></i> Dashboard
                 </a>
