@@ -1,10 +1,9 @@
-name: Deploy ke InfinityFree
+name: Deploy ke ArenHost
 
 on:
   push:
     branches:
-      - main  # Pastikan ini sesuai nama branch utama kamu (master atau main)
-
+      - main  # Pastikan ini sesuai nama branch utama
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -19,7 +18,7 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /htdocs/ # Folder public di InfinityFree biasanya htdocs
+        server-dir: /public_html/ 
         exclude: |
           **/.git*
           **/.github*
