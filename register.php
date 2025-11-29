@@ -44,8 +44,11 @@ if (function_exists('checkAlreadyLogin')) {
                             <label class="form-label">WhatsApp Number</label>
                             <div class="input-group input-group-custom">
                                 <span class="input-group-text"><i class="bi bi-phone"></i></span>
-                                <input type="text" name="phone" class="form-control" placeholder="+62 812 3456 7890" required>
+                                <input type="text" name="phone" class="form-control" placeholder="08xx / +628xx" required maxlength="15">
                             </div>
+                            <small class="text-danger fst-italic" style="font-size: 0.75rem;">
+                                *Pastikan nomor yang anda masukkan benar
+                            </small>
                         </div>
 
                         <div class="mb-3">
