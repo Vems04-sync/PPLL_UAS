@@ -17,7 +17,7 @@ if (in_array($_SERVER['REMOTE_ADDR'], $whitelist) || $_SERVER['SERVER_NAME'] == 
     
     $username = "infokyuu_project_management_task_db";      
     
-    $password = "Y*Lc@**tz3&$iXbD"; 
+    $password = "qLwyBXh@Jv3HXeF"; 
 }
 
 try {
