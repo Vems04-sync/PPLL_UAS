@@ -1,6 +1,6 @@
 <?php
 // config/database.php
-// Deteksi otomatis: Apakah di Laptop (Localhost) atau di InfinityFree (Hosting)
+// Deteksi otomatis: Apakah di Laptop (Localhost) atau di arenhost (Hosting)
 $whitelist = array('127.0.0.1', '::1');
 if (in_array($_SERVER['REMOTE_ADDR'], $whitelist) || $_SERVER['SERVER_NAME'] == 'localhost') {
     // --- SETTINGAN LAPTOP (LOKAL) ---
@@ -9,15 +9,15 @@ if (in_array($_SERVER['REMOTE_ADDR'], $whitelist) || $_SERVER['SERVER_NAME'] == 
     $username = "root";
     $password = "";
 } else {
-    // --- SETTINGAN INFINITYFREE (HOSTING) ---
+    // --- SETTINGAN arenhost (HOSTING) ---
 
-    $host = "sql100.infinityfree.com"; 
+    $host = "localhost"; 
     
-    $dbname = "if0_40537993_management_task"; 
+    $dbname = "infokyuu_project_management_task_db"; 
     
-    $username = "if0_40537993";      
+    $username = "infokyuu_project_management_task_db";      
     
-    $password = "LBTcu6Acv7e7Rcm"; 
+    $password = "Y*Lc@**tz3&$iXbD"; 
 }
 
 try {
