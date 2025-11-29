@@ -1,12 +1,23 @@
 <?php
-// session_start();
+// 1. MULAI SESSION (Wajib agar tahu siapa yang login)
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once "../config/database.php";
 
 // Set timezone
 date_default_timezone_set('Asia/Jakarta');
 
-// $user_id = $_SESSION['user_id'] ?? 1;
-$user_id = 1;
+// 2. PERBAIKAN DISINI: Gunakan ID dari Session, bukan angka 1 manual
+$user_id = $_SESSION['user_id'] ?? 0; // Default 0 jika tidak ada session
+
+// Cek jika user belum login
+if ($user_id == 0) {
+    echo "<script>alert('Sesi Anda telah habis. Silakan login kembali.'); window.location='../login.php';</script>";
+    exit;
+}
+
 $new_phone = trim($_POST['new_phone'] ?? '');
 $otp_code = trim($_POST['otp_code'] ?? '');
 
@@ -68,4 +79,3 @@ try {
 }
 
 exit;
-
